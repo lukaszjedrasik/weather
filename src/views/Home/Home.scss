@@ -1,0 +1,49 @@
+.home {
+  width: 600px;
+  padding: 28px;
+  text-align: center;
+
+  &__title {
+    max-width: 500px;
+    margin: 24px auto;
+    font-weight: 100;
+    line-height: 22px;
+
+    &--bold {
+      font-weight: bold;
+    }
+  }
+
+  &__actions {
+    margin: 0 auto 24px auto;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+
+    &-input {
+      position: relative;
+      height: 40px;
+      width: 65%;
+      padding-left: 12px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.1);
+      border: 1px solid #fff;
+    }
+
+    &-button {
+      width: 30%;
+      height: 44px;
+      color: #fff;
+      border: 1px solid #fff;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      background: rgba(255, 255, 255, 0.3);
+      transition: background .3s;
+      will-change: background;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}

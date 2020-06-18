@@ -1,0 +1,20 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    @media all and (max-width: 980px){
+      width: 60px !important;
+    }
+  }
+
+  &__brand {
+    margin-left: 32px;
+    font-size: 64px;
+    font-weight: bold;
+    @media all and (max-width: 980px){
+      font-size: 42px;
+    }
+  }
+}
