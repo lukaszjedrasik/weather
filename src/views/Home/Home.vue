@@ -1,5 +1,8 @@
 <template>
-  <div class="home">
+  <div
+    class="home"
+    :style="{ height: `${docHeight}px` }"
+  >
     <Logo width="150" />
 
     <div class="home__title">
@@ -44,7 +47,8 @@ export default {
         lat: '',
         lon: ''
       },
-      place: null
+      place: null,
+      docHeight: false
     }
   },
 
@@ -80,6 +84,19 @@ export default {
 
   mounted () {
    this.getPosition();
+  },
+
+  beforeMount () {
+    if (window.innerWidth <= 980) {
+      const onResize = () => {
+        this.docHeight = window.innerHeight;
+      }
+      window.addEventListener('resize', onResize);
+      onResize();
+      this.$on('hook:beforeDestroy', () => {
+        window.removeEventListener('resize', onResize);
+      });
+    }
   }
 }
 </script>

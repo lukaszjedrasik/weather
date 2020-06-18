@@ -2,6 +2,10 @@
   width: 600px;
   padding: 28px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   &__title {
     max-width: 500px;
@@ -16,6 +20,7 @@
 
   &__actions {
     margin: 0 auto 24px auto;
+    width: 100%;
     max-width: 500px;
     display: flex;
     justify-content: space-between;
@@ -26,8 +31,12 @@
       width: 65%;
       padding-left: 12px;
       color: #fff;
-      background: rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, .1);
+      backdrop-filter: blur(10px);
       border: 1px solid #fff;
+      @media all and (max-width: 980px) {
+        width: 60%;
+      }
     }
 
     &-button {
@@ -38,6 +47,7 @@
       text-transform: uppercase;
       letter-spacing: 1.2px;
       background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
       transition: background .3s;
       will-change: background;
 

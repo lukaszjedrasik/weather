@@ -1,3 +1,42 @@
 .short-details {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  background: rgba(255, 255, 255, .1);
+  backdrop-filter: blur(10px);
 
+  &__left {
+    font-size: 38px;
+    font-weight: bold;
+  }
+
+  &__right {
+    transform: translateY(40px);
+  }
+
+  &__celsius {
+    font-family: sans-serif;
+  }
+
+  &__items {
+    display: flex;
+    margin-bottom: 10px;
+    font-weight: 100;
+  }
+
+  &__title {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  &__button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    letter-spacing: 1.5px;
+  }
 }
