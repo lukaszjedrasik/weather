@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="home"
-    :style="{ height: `${docHeight}px` }"
-  >
+  <div class="home">
     <Logo width="150" />
 
     <div class="home__title">
@@ -47,8 +44,7 @@ export default {
         lat: '',
         lon: ''
       },
-      place: null,
-      docHeight: false
+      place: null
     }
   },
 
@@ -86,17 +82,9 @@ export default {
    this.getPosition();
   },
 
-  beforeMount () {
-    if (window.innerWidth <= 980) {
-      const onResize = () => {
-        this.docHeight = window.innerHeight;
-      }
-      window.addEventListener('resize', onResize);
-      onResize();
-      this.$on('hook:beforeDestroy', () => {
-        window.removeEventListener('resize', onResize);
-      });
-    }
+  metaInfo: {
+    title: 'Home Page',
+    titleTemplate: '%s | AirApp'
   }
 }
 </script>

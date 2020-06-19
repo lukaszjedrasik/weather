@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 
 import * as GmapVue from 'gmap-vue'
+import VueMeta from 'vue-meta'
 
 Vue.use(GmapVue, {
   load: {
@@ -12,6 +13,7 @@ Vue.use(GmapVue, {
   },
   installComponents: true
 })
+Vue.use(VueMeta)
 
 Vue.config.productionTip = false
 

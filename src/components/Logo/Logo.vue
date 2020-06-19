@@ -8,7 +8,12 @@
         :style="{ width: width + 'px' }"
       >
     </figure>
-    <h1 class="logo__brand">AirApp</h1>
+    <h1
+      class="logo__brand"
+      :style="{ fontSize: fontSize + 'px' }"
+    >
+      AirApp
+    </h1>
   </div>
 </template>
 
@@ -18,6 +23,10 @@
 
     props: {
       width: {
+        type: String,
+        required: false
+      },
+      fontSize: {
         type: String,
         required: false
       }

@@ -1,4 +1,13 @@
 module.exports = {
   lintOnSave: false,
-  publicPath: '/weather/'
+
+  publicPath: '/weather/',
+
+  css: {
+    loaderOptions: {
+      scss: {
+        prependData: `@import "@/assets/styles/main.scss";`
+      }
+    }
+  }
 }
