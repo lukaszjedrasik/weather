@@ -1,6 +1,6 @@
 .short-details {
   position: relative;
-  max-width: 436px;
+  max-width: 500px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -8,13 +8,16 @@
   padding: 32px;
   @extend .background-blur;
   @media all and (max-width: 980px) {
-    width: 80%;
     flex-direction: column;
+    padding: 24px;
   }
 
   &__left {
     font-size: 38px;
     @extend .bold;
+    @media all and (max-width: 980px) {
+      font-size: 28px;
+    }
   }
 
   &__right {
@@ -28,6 +31,12 @@
   &__center {
     @media all and (max-width: 980px) {
       margin-bottom: 24px;
+    }
+  }
+
+  &__center {
+    @media all and (max-width: 980px) {
+      font-size: 14px;
     }
   }
 
@@ -55,5 +64,8 @@
     border: none;
     color: #fff;
     letter-spacing: 1.5px;
+    @media all and (max-width: 980px) {
+      font-size: 14px;
+    }
   }
 }

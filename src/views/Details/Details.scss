@@ -1,29 +1,25 @@
 .details {
-  min-height: 100vh;
-  width: 600px;
-  margin: 0 auto;
+  @extend .boxed;
+  width: 900px;
   overflow-x: hidden;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @media all and (max-width: 980px) {
-    width: calc(100% - 32px);
-    padding: 64px 0;
-  }
 
   &__link {
     color: #fff;
     text-decoration: none;
     display: flex;
+    width: fit-content;
   }
 
   &__heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 24px;
-    margin-bottom: 48px;
+    margin-top: 64px;
+    margin-bottom: 64px;
     padding: 24px 48px;
     @extend .background-blur;
     @media all and (max-width: 980px) {

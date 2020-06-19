@@ -1,2 +1,11 @@
 @import "reset";
 @import "mixins";
+
+
+body {
+  background: url("~@/assets/images/backgroundImage.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

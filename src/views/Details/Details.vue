@@ -40,6 +40,10 @@
       MoreDetails
     },
 
+    mounted () {
+      window.scrollTo(0, 0);
+    },
+
     metaInfo () {
       const title = this.$route.params.id;
       return {

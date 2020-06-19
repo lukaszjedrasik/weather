@@ -1,19 +1,21 @@
 .home {
+  height: 100vh;
+  @extend .boxed;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @extend .centered;
-  @media all and (max-width: 980px) {
-    width: calc(100% - 32px);
-  }
+  overflow: hidden;
 
   &__title {
     max-width: 500px;
     margin: 24px auto;
     font-weight: 100;
     line-height: 22px;
+    @media all and (max-width: 980px) {
+      font-size: 14px;
+    }
 
     &--bold {
       @extend .bold;
@@ -30,21 +32,18 @@
     &-input {
       position: relative;
       height: 40px;
-      width: 65%;
+      width: 68%;
       padding: 0 0 0 12px;
       color: #fff;
       @extend .background-blur;
       border: 1px solid #fff;
       -webkit-appearance: none;
       border-radius: 0;
-      @media all and (max-width: 980px) {
-        width: 60%;
-      }
     }
 
     &-button {
       width: 30%;
-      height: 42px;
+      height: 40px;
       color: #fff;
       border: 1px solid #fff;
       text-transform: uppercase;
@@ -55,6 +54,9 @@
 
       &:hover {
         background: rgba(255, 255, 255, 0.5);
+        @media all and (max-width: 980px) {
+          background: rgba(255, 255, 255, .1);
+        }
       }
     }
   }

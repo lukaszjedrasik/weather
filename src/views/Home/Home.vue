@@ -1,5 +1,8 @@
 <template>
-  <div class="home">
+  <div
+    class="home"
+    :style="{ height: isMobile ? `${docHeight}px` : {} }"
+  >
     <Logo width="150" />
 
     <div class="home__title">
@@ -38,24 +41,30 @@ export default {
     ShortDetaiils
   },
 
-  data () {
+  data() {
     return {
       coords: {
         lat: '',
         lon: ''
       },
-      place: null
+      place: null,
+      docHeight: 0
     }
   },
 
   computed: {
     ...mapState({
       city: state => state.city.data
-    })
+    }),
+    isMobile() {
+      if (window.innerWidth <= 980) {
+        return true
+      } else return false
+    }
   },
 
   methods: {
-    getPosition () {
+    getPosition() {
       if ('geolocation' in navigator) {
         navigator.geolocation.getCurrentPosition(position => {
           this.coords.lat = position.coords.latitude;
@@ -78,8 +87,21 @@ export default {
     }
   },
 
-  mounted () {
-   this.getPosition();
+  mounted() {
+    this.getPosition();
+  },
+
+  beforeMount() {
+    if (this.isMobile) {
+      const onResize = () => {
+        this.docHeight = window.innerHeight;
+      };
+      window.addEventListener('resize', onResize);
+      onResize();
+      this.$on('hook:beforeDestroy', () => {
+        window.removeEventListener('resize', onResize);
+      });
+    }
   },
 
   metaInfo: {
