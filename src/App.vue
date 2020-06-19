@@ -11,13 +11,9 @@
     min-height: 100vh;
     color: #fff;
     font-family: 'Comfortaa', cursive;
-    background-image: url("assets/images/backgroundImage.png");
+    background-image: url("assets/images/backgroundImage.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    @media all and (max-width: 980px) {
-      /*min-height: 100%;*/
-      /*height: 100vh;*/
-    }
   }
 </style>
