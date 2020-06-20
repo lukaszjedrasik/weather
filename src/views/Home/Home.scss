@@ -25,8 +25,9 @@
   &__validation-message {
     margin-bottom: 24px;
     line-height: 22px;
-    font-weight: 100;
+    @extend .bold;
     text-align: center;
+    color: #D7163F;
     @media all and (max-width: 980px) {
       font-size: 14px;
     }
