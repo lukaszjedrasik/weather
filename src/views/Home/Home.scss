@@ -22,6 +22,16 @@
     }
   }
 
+  &__validation-message {
+    margin-bottom: 24px;
+    line-height: 22px;
+    font-weight: 100;
+    text-align: center;
+    @media all and (max-width: 980px) {
+      font-size: 14px;
+    }
+  }
+
   &__actions {
     margin: 0 auto 24px auto;
     width: 100%;

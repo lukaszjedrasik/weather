@@ -36,7 +36,7 @@
   import CityInformation from "@/mixins/CityInformation";
 
   export default {
-    name: "ShortInformation",
+    name: "ShortDetails",
 
     mixins: [ CityInformation ],
 
@@ -61,4 +61,4 @@
   }
 </script>
 
-<style scoped lang="scss" src="./ShortDetaiils.scss" />
+<style scoped lang="scss" src="./ShortDetails.scss" />

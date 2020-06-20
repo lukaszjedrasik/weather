@@ -1,5 +1,6 @@
 const state = {
-  data: null
+  data: null,
+  loader: false
 }
 
 const mutations = {
@@ -13,16 +14,21 @@ const mutations = {
         moreDetails
       }
     }
+  },
+  SET_LOADER (state, payload) {
+    state.loader = payload
   }
 }
 
 const actions = {
   async getCityByGeoLocation ({ commit }, { lat, lon }) {
+    commit('SET_LOADER', true)
     const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.VUE_APP_OPEN_WEATHER_KEY}`, {
       method: 'POST'
     })
     const data = await res.json()
     commit('SET_DATA', data)
+    commit('SET_LOADER', false)
   }
 }
 
