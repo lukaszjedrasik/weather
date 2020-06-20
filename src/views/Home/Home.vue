@@ -38,6 +38,7 @@
 
 <script>
 import { mapState } from 'vuex';
+import lodashGet from 'lodash.get';
 import Logo from '@/components/Logo/Logo'
 import ShortDetails from "@/components/WeatherDetails/ShortDetails/ShortDetails";
 import Loader from "@/components/Loader/Loader";
@@ -105,7 +106,10 @@ export default {
   },
 
   mounted() {
-    this.getPosition();
+    const statement = lodashGet(this, 'city.city.name', false);
+    if (!statement) {
+      this.getPosition();
+    }
   },
 
   beforeMount() {
