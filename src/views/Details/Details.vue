@@ -33,6 +33,7 @@
   import Logo from '@/components/Logo/Logo'
   import MoreDetails from "@/components/WeatherDetails/MoreDetails/MoreDetails";
   import Loader from "@/components/Loader/Loader";
+  import lodashGet from 'lodash.get'
 
   export default {
     name: "Details",
@@ -47,10 +48,14 @@
 
     beforeRouteEnter (to, from, next) {
       next(vm => {
-        vm.$store.dispatch('city/getCityByGeoLocation', {
-          lat: to.params.lat,
-          lon: to.params.lon
-        })
+        if (lodashGet(vm, 'city.data.city.name', false)) {
+          return
+        } else {
+          vm.$store.dispatch('city/getCityByGeoLocation', {
+            lat: to.params.lat,
+            lon: to.params.lon
+          })
+        }
       })
     },
 
