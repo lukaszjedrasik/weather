@@ -23,12 +23,15 @@ const mutations = {
 const actions = {
   async getCityByGeoLocation ({ commit }, { lat, lon }) {
     commit('SET_LOADER', true)
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.VUE_APP_OPEN_WEATHER_KEY}`, {
-      method: 'POST'
-    })
-    const data = await res.json()
-    commit('SET_DATA', data)
-    commit('SET_LOADER', false)
+    try {
+      const data = await (await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.VUE_APP_OPEN_WEATHER_KEY}`, {
+        method: 'POST'
+      })).json()
+      commit('SET_DATA', data)
+      commit('SET_LOADER', false)
+    } catch (e) {
+      console.error('Failed fetch City', e)
+    }
   }
 }
 

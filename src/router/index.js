@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import store from '@/store/index'
 import Home from '@/views/Home/Home.vue'
 import Details from "@/views/Details/Details";
 import PageNotFound from "@/views/PageNotFound/PageNotFound";
@@ -14,16 +13,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/:id',
+    path: '/:id&:lat&:lon',
     name: 'Details',
-    component: Details,
-    beforeEnter: (to, from, next) => {
-      if (store.state.city.data) {
-        next()
-      } else {
-        next('/')
-      }
-    }
+    component: Details
   },
   {
     path: '*',

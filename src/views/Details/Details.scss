@@ -43,4 +43,8 @@
     @extend .bold;
     margin-right: 10px;
   }
+
+  .loader {
+    @extend .centralized;
+  }
 }

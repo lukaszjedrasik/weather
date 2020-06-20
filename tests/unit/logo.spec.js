@@ -2,7 +2,7 @@ import { shallowMount } from '@vue/test-utils'
 import Logo from '@/components/Logo/Logo.vue'
 
 describe('Logo.vue', () => {
-  it('renders props width and font size when passed', () => {
+  it('render props width and font size when are passed', () => {
     const width = '200';
     const fontSize = '64';
 

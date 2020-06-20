@@ -32,7 +32,7 @@
       </button>
     </div>
 
-    <ShortDetails />
+    <ShortDetails v-if="!loader" />
   </div>
 </template>
 
@@ -70,9 +70,7 @@ export default {
       loader: state => state.city.loader
     }),
     isMobile() {
-      if (window.innerWidth <= 980) {
-        return true
-      } else return false
+      return window.innerWidth <= 980
     }
   },
 

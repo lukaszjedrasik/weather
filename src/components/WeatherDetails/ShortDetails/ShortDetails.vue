@@ -47,15 +47,18 @@
       },
       description () {
         return lodashGet(this, 'city.data.details.shortDetails[0].weather[0].description', false);
+      },
+      coords () {
+        return lodashGet(this, 'city.data.city.coord', false);
       }
     },
 
     methods: {
       showMoreDetails () {
-        if (!this.cityName) {
+        if (!this.cityName && !this.coords) {
           return
         }
-        this.$router.push(`/${this.cityName}`)
+        this.$router.push(`/${this.cityName}&${this.coords.lat}&${this.coords.lon}`)
       }
     }
   }

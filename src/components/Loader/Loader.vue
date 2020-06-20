@@ -1,5 +1,5 @@
-<template>
-  <div class="lds-ellipsis">
+<template functional>
+  <div class="lds-ellipsis loader">
     <div></div>
     <div></div>
     <div></div>
