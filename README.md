@@ -1,4 +1,11 @@
-# appchance
+# appchance weather app - AirApp
+
+## Dependencies which i used:
+- Dotenv - For stored variables like API keys
+- Gmap - For Geocoding from Google
+- Lodash.get - As a helper
+- Sass Resources Loader - For creating scss mixins
+- Vue-meta - For create Title for each page
 
 ## Project setup
 ```
@@ -14,16 +21,3 @@ yarn serve
 ```
 yarn build
 ```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
