@@ -1,3 +1,5 @@
+import router from "@/router";
+
 const state = {
   data: null,
   loader: false
@@ -30,7 +32,8 @@ const actions = {
       commit('SET_DATA', data)
       commit('SET_LOADER', false)
     } catch (e) {
-      console.error('Failed fetch City', e)
+      console.error('WRONG LAT OR LON.', e)
+      router.push('/')
     }
   }
 }
